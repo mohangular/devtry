@@ -6,10 +6,7 @@ import { Component, OnInit } from './node_modules/@angular/core';
   styleUrls: ['./global-error.component.scss']
 })
 export class GlobalErrorComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

@@ -13,15 +13,13 @@ describe('AppComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [
-        AppModule
-      ],
+      imports: [AppModule],
       providers: [
-        { provide: RemoteLoggingService, useClass: MockedRemoteLoggingService},
+        { provide: RemoteLoggingService, useClass: MockedRemoteLoggingService },
         { provide: AppConfigService, useClass: MockedAppConfigService },
         ApiConfigService
       ],
-      declarations: [],
+      declarations: []
     }).compileComponents();
   }));
 
@@ -43,6 +41,8 @@ describe('AppComponent', () => {
   it('should render title in a h1 tag', () => {
     expect(component).toBeTruthy();
     const el = fixture.debugElement.nativeElement;
-    expect(el.querySelector('h1').textContent).toContain('Welcome To New Angular App!');
+    expect(el.querySelector('h1').textContent).toContain(
+      'Welcome To New Angular App!'
+    );
   });
 });

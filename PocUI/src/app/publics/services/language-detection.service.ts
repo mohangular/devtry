@@ -1,5 +1,12 @@
 /** @module Core */
-import { Injectable, Injector, StaticProvider, LOCALE_ID, TRANSLATIONS, TRANSLATIONS_FORMAT } from './node_modules/@angular/core';
+import {
+  Injectable,
+  Injector,
+  StaticProvider,
+  LOCALE_ID,
+  TRANSLATIONS,
+  TRANSLATIONS_FORMAT
+} from './node_modules/@angular/core';
 import { RemoteLoggingService } from './remote-logging.service';
 
 // Grab a handle to webpack's `require`
@@ -27,7 +34,9 @@ export class LanguageDetectionService {
 
   constructor(private logger: RemoteLoggingService) {
     try {
-      const langs: Iterable<[string, string[]]> = require('../../../locale/langs.json');
+      const langs: Iterable<
+        [string, string[]]
+      > = require('../../../locale/langs.json');
       this.SupportedLangs = new Map<string, string[]>(langs);
     } catch (err) {
       this.logger.logError(err);
@@ -54,7 +63,9 @@ export class LanguageDetectionService {
    */
   getAllUserLanguages(): ReadonlyArray<string> {
     // IE doesn't support window.navigator.languages nor any graceful fallback, so manually handle it
-    let langs:ReadonlyArray<string> = window.navigator.languages ? window.navigator.languages : ['en-US', 'en']
+    let langs: ReadonlyArray<string> = window.navigator.languages
+      ? window.navigator.languages
+      : ['en-US', 'en'];
     return langs;
   }
 
@@ -93,14 +104,24 @@ export class LanguageDetectionService {
     });
 
     // Find the first user language to intersect with the list of supported langs.
-    const findIntersection = (previous: string, current: string, index: Number, uls: string[]): string => {
+    const findIntersection = (
+      previous: string,
+      current: string,
+      index: Number,
+      uls: string[]
+    ): string => {
       if (previous !== undefined) {
         return previous;
       }
     };
 
     // Find the closest match.
-    const findBestMatch = (previous: string, current: string, index: Number, uls: string[]): string => {
+    const findBestMatch = (
+      previous: string,
+      current: string,
+      index: Number,
+      uls: string[]
+    ): string => {
       // If we already had a match then we're done, so just return that.
       if (previous !== null) {
         return previous;
@@ -114,24 +135,33 @@ export class LanguageDetectionService {
       // This really shouldn't happen since langs.json is an inverted index,
       // but someone may have made an innocent mistake. Do our best to move on.
       if (langs === undefined || langs === null || langs.length === 0) {
-        langs = [ lang ]; // e.g. just plain 'es'
+        langs = [lang]; // e.g. just plain 'es'
       }
 
       return langs.indexOf(current) >= 0
         ? current
         : (() => {
-          const i = langs.findIndex((v) => v.startsWith(`${lang}-`));
-          return i >= 0 ? langs[i] : null;
-        })();
-      };
+            const i = langs.findIndex(v => v.startsWith(`${lang}-`));
+            return i >= 0 ? langs[i] : null;
+          })();
+    };
     // Propagate nulls so we can fallback to the default if no
     // good matches are found.
-    return userLangs.reduce(findBestMatch, null) || LanguageDetectionService.DefaultLanguage;
+    return (
+      userLangs.reduce(findBestMatch, null) ||
+      LanguageDetectionService.DefaultLanguage
+    );
   }
 }
 
 export function DetectSupportedUserLanguage() {
-  const injector = Injector.create([{ deps: [ Injector ], provide: RemoteLoggingService, useClass: RemoteLoggingService }]);
+  const injector = Injector.create([
+    {
+      deps: [Injector],
+      provide: RemoteLoggingService,
+      useClass: RemoteLoggingService
+    }
+  ]);
   const lds = new LanguageDetectionService(injector.get(RemoteLoggingService));
   return lds.getUserLanguage();
 }
@@ -155,9 +185,14 @@ export function MaybeLoadLocaleProviders(logger: RemoteLoggingService) {
   return localeProviders;
 }
 
-export function MaybeLoadLocaleProvidersFromQuerymap(logger: RemoteLoggingService) {
+export function MaybeLoadLocaleProvidersFromQuerymap(
+  logger: RemoteLoggingService
+) {
   let localeProviders: StaticProvider[] = null;
-  const currentLocale = window.location.search.length > 5 ? window.location.search.substr(6) : DetectSupportedUserLanguage();
+  const currentLocale =
+    window.location.search.length > 5
+      ? window.location.search.substr(6)
+      : DetectSupportedUserLanguage();
   if (currentLocale !== LanguageDetectionService.DefaultLanguage) {
     // Load our language file for any non-default locale.
     try {
@@ -177,7 +212,13 @@ export function MaybeLoadLocaleProvidersFromQuerymap(logger: RemoteLoggingServic
 export function GetAllSupportedLanguages(): string[] {
   const langs = [];
 
-  const injector = Injector.create([{ deps: [ Injector ], provide: RemoteLoggingService, useClass: RemoteLoggingService }]);
+  const injector = Injector.create([
+    {
+      deps: [Injector],
+      provide: RemoteLoggingService,
+      useClass: RemoteLoggingService
+    }
+  ]);
   const lds = new LanguageDetectionService(injector.get(RemoteLoggingService));
 
   lds.SupportedLangs.forEach(v => langs.push(...v));

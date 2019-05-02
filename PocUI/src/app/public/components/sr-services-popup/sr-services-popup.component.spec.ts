@@ -8,9 +8,8 @@ describe('SrServicesPopupComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SrServicesPopupComponent ]
-    })
-    .compileComponents();
+      declarations: [SrServicesPopupComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

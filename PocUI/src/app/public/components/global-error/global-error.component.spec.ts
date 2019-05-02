@@ -8,9 +8,8 @@ describe('GlobalErrorComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ GlobalErrorComponent ]
-    })
-    .compileComponents();
+      declarations: [GlobalErrorComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

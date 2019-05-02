@@ -9,9 +9,12 @@ import { HttpErrorHandlerService } from './http-error-handler.service';
 @Injectable({
   providedIn: 'root'
 })
-export class BaseClientService extends BaseService  {
-
-  constructor(config: ApiConfigService, http: HttpClient, private errorHandler: HttpErrorHandlerService) {
+export class BaseClientService extends BaseService {
+  constructor(
+    config: ApiConfigService,
+    http: HttpClient,
+    private errorHandler: HttpErrorHandlerService
+  ) {
     super(config, http);
   }
 
@@ -20,9 +23,17 @@ export class BaseClientService extends BaseService  {
    * @param action The action that is performing the request
    * @return A response containing the expected model (single)
    */
-  getById<TResponseModel>(route: string, action: string = 'error executing requests'): Observable<HttpResponse<TResponseModel>> {
-    return this.http.get<TResponseModel>(this.rootUrl + route, { params: this.newParams(), observe: 'response', responseType: 'json' })
-    .pipe(catchError(this.errorHandler.handleHttpErrorResponse(action)));
+  getById<TResponseModel>(
+    route: string,
+    action: string = 'error executing requests'
+  ): Observable<HttpResponse<TResponseModel>> {
+    return this.http
+      .get<TResponseModel>(this.rootUrl + route, {
+        params: this.newParams(),
+        observe: 'response',
+        responseType: 'json'
+      })
+      .pipe(catchError(this.errorHandler.handleHttpErrorResponse(action)));
   }
 
   /**
@@ -30,21 +41,38 @@ export class BaseClientService extends BaseService  {
    * @param action The action that is performing the request
    * @return A response containing the expected models (array)
    */
-  get<TResponseModel>(route: string, action: string = 'error executing requests'): Observable<HttpResponse<Array<TResponseModel>>> {
-    return this.http.get<TResponseModel>(this.rootUrl + route, { params: this.newParams(), observe: 'response', responseType: 'json' })
-    .pipe(catchError(this.errorHandler.handleHttpErrorResponse(action)));
+  get<TResponseModel>(
+    route: string,
+    action: string = 'error executing requests'
+  ): Observable<HttpResponse<Array<TResponseModel>>> {
+    return this.http
+      .get<TResponseModel>(this.rootUrl + route, {
+        params: this.newParams(),
+        observe: 'response',
+        responseType: 'json'
+      })
+      .pipe(catchError(this.errorHandler.handleHttpErrorResponse(action)));
   }
 
-    /**
+  /**
    * @param route The endpoint for the request (ie. - '/v1/reports_recent')
    * @param body The object that is being updated
    * @param action The action that is performing the request
    * @return A response containing the expected result (single)
    */
-  put<TResponseModel>(route: string, body: any, action: string = 'error putting request'): Observable<HttpResponse<TResponseModel>> {
+  put<TResponseModel>(
+    route: string,
+    body: any,
+    action: string = 'error putting request'
+  ): Observable<HttpResponse<TResponseModel>> {
     const url = this.rootUrl + route;
-    return this.http.put<TResponseModel>(url, body, { params: this.newParams(), observe: 'response', responseType: 'json' })
-        .pipe(catchError(this.errorHandler.handleHttpErrorResponse(action)));
+    return this.http
+      .put<TResponseModel>(url, body, {
+        params: this.newParams(),
+        observe: 'response',
+        responseType: 'json'
+      })
+      .pipe(catchError(this.errorHandler.handleHttpErrorResponse(action)));
   }
 
   /**
@@ -53,9 +81,18 @@ export class BaseClientService extends BaseService  {
    * @param action The action that is performing the request
    * @return A response containing the expected result (single)
    */
-  post<TResponseModel>(route: string, body: any, action: string = 'error posting request'): Observable<HttpResponse<TResponseModel>> {
+  post<TResponseModel>(
+    route: string,
+    body: any,
+    action: string = 'error posting request'
+  ): Observable<HttpResponse<TResponseModel>> {
     const url = this.rootUrl + route;
-    return this.http.post<TResponseModel>(url, body, { params: this.newParams(), observe: 'response', responseType: 'json' })
+    return this.http
+      .post<TResponseModel>(url, body, {
+        params: this.newParams(),
+        observe: 'response',
+        responseType: 'json'
+      })
       .pipe(catchError(this.errorHandler.handleHttpErrorResponse(action)));
   }
 
@@ -64,9 +101,17 @@ export class BaseClientService extends BaseService  {
    * @param action The action that is performing the request
    * @return A response containing the expected result
    */
-  delete<TResponseModel>(route: string, action: string = 'error delete request'): Observable<HttpResponse<TResponseModel>> {
+  delete<TResponseModel>(
+    route: string,
+    action: string = 'error delete request'
+  ): Observable<HttpResponse<TResponseModel>> {
     const url = this.rootUrl + route;
-    return this.http.delete<TResponseModel>(url, { params: this.newParams(), observe: 'response', responseType: 'json' })
+    return this.http
+      .delete<TResponseModel>(url, {
+        params: this.newParams(),
+        observe: 'response',
+        responseType: 'json'
+      })
       .pipe(catchError(this.errorHandler.handleHttpErrorResponse(action)));
   }
 }

@@ -1,4 +1,8 @@
-import { async, ComponentFixture, TestBed } from './node_modules/@angular/core/testing';
+import {
+  async,
+  ComponentFixture,
+  TestBed
+} from './node_modules/@angular/core/testing';
 
 import { SrAvailableServicesComponent } from './sr-available-services.component';
 
@@ -8,9 +12,8 @@ describe('SrAvailableServicesComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SrAvailableServicesComponent ]
-    })
-    .compileComponents();
+      declarations: [SrAvailableServicesComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

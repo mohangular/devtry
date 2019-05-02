@@ -1,5 +1,8 @@
 import { Injectable, Injector } from './node_modules/@angular/core';
-import { LocationStrategy, HashLocationStrategy } from './node_modules/@angular/common';
+import {
+  LocationStrategy,
+  HashLocationStrategy
+} from './node_modules/@angular/common';
 import * as StackTrace from './node_modules/stacktrace-js';
 import { HttpHeaders, HttpClient } from './node_modules/@angular/common/http';
 
@@ -26,9 +29,23 @@ export class RemoteLoggingService {
     // }
 
     if (isError) {
-      console.error('Logged to server - message: ' + message + '  URL: ' +  url + '  stack: ' + stack);
+      console.error(
+        'Logged to server - message: ' +
+          message +
+          '  URL: ' +
+          url +
+          '  stack: ' +
+          stack
+      );
     } else {
-      console.log('Logged to server - message: ' + message + '  URL: ' +  url + '  stack: ' + stack);
+      console.log(
+        'Logged to server - message: ' +
+          message +
+          '  URL: ' +
+          url +
+          '  stack: ' +
+          stack
+      );
     }
   }
 
@@ -54,9 +71,11 @@ export class RemoteLoggingService {
 
   private getUrl() {
     const location = this.injector.get(LocationStrategy);
-    const url = location instanceof HashLocationStrategy
-      ? (<HashLocationStrategy>location).path(true) || window.location.toString()
-      : window.location.toString();
+    const url =
+      location instanceof HashLocationStrategy
+        ? (<HashLocationStrategy>location).path(true) ||
+          window.location.toString()
+        : window.location.toString();
     return url;
   }
 }

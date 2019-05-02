@@ -7,20 +7,18 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
   styleUrls: ['./sr-services-popup.component.css']
 })
 export class SrServicesPopupComponent implements OnInit {
-
   constructor(
     public dialogRef: MatDialogRef<SrServicesPopupComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: DialogData) {}
+    @Inject(MAT_DIALOG_DATA) public data: DialogData
+  ) {}
 
   onNoClick(): void {
     this.dialogRef.close();
   }
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }
 
 export interface DialogData {
-  srvcNoOfPerson: number;  
+  srvcNoOfPerson: number;
 }

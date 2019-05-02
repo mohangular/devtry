@@ -1,6 +1,10 @@
 /* tslint:disable */
 import { Injectable } from './node_modules/@angular/core';
-import { HttpClient, HttpParameterCodec, HttpParams } from './node_modules/@angular/common/http';
+import {
+  HttpClient,
+  HttpParameterCodec,
+  HttpParams
+} from './node_modules/@angular/common/http';
 import { ApiConfigService } from './api-config.service';
 
 /**
@@ -33,8 +37,7 @@ const PARAMETER_CODEC = new ParameterCodec();
   providedIn: 'root'
 })
 export class BaseService {
-  constructor(protected config: ApiConfigService, protected http: HttpClient) {
-  }
+  constructor(protected config: ApiConfigService, protected http: HttpClient) {}
 
   private _rootUrl: string;
 

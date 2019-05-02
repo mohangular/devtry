@@ -1,20 +1,29 @@
-import { TestBed, inject, async, tick, fakeAsync } from './node_modules/@angular/core/testing';
+import {
+  TestBed,
+  inject,
+  async,
+  tick,
+  fakeAsync
+} from './node_modules/@angular/core/testing';
 
 import { RemoteLoggingService } from './remote-logging.service';
 import { HttpClientTestingModule } from './node_modules/@angular/common/http/testing';
-import { HashLocationStrategy, LocationStrategy } from './node_modules/@angular/common';
+import {
+  HashLocationStrategy,
+  LocationStrategy
+} from './node_modules/@angular/common';
 import * as StackTrace from './node_modules/stacktrace-js';
 
 describe('RemoteLoggingService', () => {
-  const mockedLocationStrategy = jasmine.createSpyObj<HashLocationStrategy>(['path']);
+  const mockedLocationStrategy = jasmine.createSpyObj<HashLocationStrategy>([
+    'path'
+  ]);
   console.log(mockedLocationStrategy instanceof HashLocationStrategy);
   beforeEach(() => {
     spyOn(console, 'log').and.callThrough();
     spyOn(console, 'error').and.callThrough();
     TestBed.configureTestingModule({
-      imports: [
-        HttpClientTestingModule,
-      ],
+      imports: [HttpClientTestingModule],
       providers: [
         RemoteLoggingService,
         { provide: LocationStrategy, useValue: mockedLocationStrategy }
@@ -22,14 +31,19 @@ describe('RemoteLoggingService', () => {
     });
   });
 
-  it('should be created', inject([RemoteLoggingService], (service: RemoteLoggingService) => {
-    expect(service).toBeTruthy();
-  }));
+  it('should be created', inject(
+    [RemoteLoggingService],
+    (service: RemoteLoggingService) => {
+      expect(service).toBeTruthy();
+    }
+  ));
 
   it('should call log with the stack trace when logging errors', fakeAsync(() => {
     const service: RemoteLoggingService = TestBed.get(RemoteLoggingService);
     spyOn<any>(service, 'getUrl').and.callFake(() => 'http://test.com');
-    const stackFrames = spyOn(StackTrace, 'fromError').and.callFake(() => Promise.resolve(['Call Stack Line 1']));
+    const stackFrames = spyOn(StackTrace, 'fromError').and.callFake(() =>
+      Promise.resolve(['Call Stack Line 1'])
+    );
     const logSpy = spyOn(service, 'log').and.callThrough();
     const error: Error = new Error('testing');
     service.logError(error);

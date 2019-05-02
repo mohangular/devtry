@@ -8,17 +8,16 @@ import { MockedAppConfigService } from '../../../../e2e/src/mocks/mocked-app-con
 import { MockedRemoteLoggingService } from '../../../../e2e/src/mocks/mocked-remote-logging.service';
 
 describe('CardService', () => {
-  beforeEach(() => { 
+  beforeEach(() => {
     TestBed.configureTestingModule({
-        imports: [
-            HttpClientModule
-        ],
-        providers: [
-            CardService,
-            { provide: AppConfigService, useClass: MockedAppConfigService },
-            { provide: RemoteLoggingService, useClass: MockedRemoteLoggingService }
-          ]
-  })});
+      imports: [HttpClientModule],
+      providers: [
+        CardService,
+        { provide: AppConfigService, useClass: MockedAppConfigService },
+        { provide: RemoteLoggingService, useClass: MockedRemoteLoggingService }
+      ]
+    });
+  });
 
   it('should be created', inject([CardService], (service: CardService) => {
     expect(service).toBeTruthy();

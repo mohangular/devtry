@@ -1,7 +1,7 @@
-import {Component, OnInit} from './node_modules/@angular/core';
-import {FormControl} from './node_modules/@angular/forms';
-import {Observable} from './node_modules/rxjs';
-import {map, startWith} from './node_modules/rxjs/operators';
+import { Component, OnInit } from './node_modules/@angular/core';
+import { FormControl } from './node_modules/@angular/forms';
+import { Observable } from './node_modules/rxjs';
+import { map, startWith } from './node_modules/rxjs/operators';
 
 /**
  * @title Filter autocomplete
@@ -13,20 +13,21 @@ import {map, startWith} from './node_modules/rxjs/operators';
 })
 export class SrHomeComponent implements OnInit {
   myControl = new FormControl();
-  options: string[] = ['USA', 'India', 'Australia','England'];
+  options: string[] = ['USA', 'India', 'Australia', 'England'];
   filteredOptions: Observable<string[]>;
 
   ngOnInit() {
-    this.filteredOptions = this.myControl.valueChanges
-      .pipe(
-        startWith(''),
-        map(value => this._filter(value))
-      );
+    this.filteredOptions = this.myControl.valueChanges.pipe(
+      startWith(''),
+      map(value => this._filter(value))
+    );
   }
 
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();
 
-    return this.options.filter(option => option.toLowerCase().includes(filterValue));
+    return this.options.filter(option =>
+      option.toLowerCase().includes(filterValue)
+    );
   }
 }

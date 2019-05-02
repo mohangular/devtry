@@ -5,7 +5,6 @@ import { MockedAppConfigService } from '../../../../e2e/src/mocks/mocked-app-con
 import { AppConfigService } from './app-config.service';
 
 describe('ApiConfigService', () => {
-
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [
@@ -15,7 +14,10 @@ describe('ApiConfigService', () => {
     });
   });
 
-  it('should be created', inject([ApiConfigService], (service: ApiConfigService) => {
-    expect(service).toBeTruthy();
-  }));
+  it('should be created', inject(
+    [ApiConfigService],
+    (service: ApiConfigService) => {
+      expect(service).toBeTruthy();
+    }
+  ));
 });

@@ -1,4 +1,8 @@
-import { async, ComponentFixture, TestBed } from './node_modules/@angular/core/testing';
+import {
+  async,
+  ComponentFixture,
+  TestBed
+} from './node_modules/@angular/core/testing';
 
 import { SrServicesPopupComponent } from './sr-services-popup.component';
 
@@ -8,9 +12,8 @@ describe('SrServicesPopupComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SrServicesPopupComponent ]
-    })
-    .compileComponents();
+      declarations: [SrServicesPopupComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

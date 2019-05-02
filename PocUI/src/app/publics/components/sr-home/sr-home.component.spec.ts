@@ -1,4 +1,8 @@
-import { async, ComponentFixture, TestBed } from './node_modules/@angular/core/testing';
+import {
+  async,
+  ComponentFixture,
+  TestBed
+} from './node_modules/@angular/core/testing';
 
 import { SrHomeComponent } from './sr-home.component';
 
@@ -8,9 +12,8 @@ describe('SrHomeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SrHomeComponent ]
-    })
-    .compileComponents();
+      declarations: [SrHomeComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

@@ -3,7 +3,11 @@ import { Component, OnInit } from './node_modules/@angular/core';
 import { Router } from './node_modules/@angular/router';
 import { NGXLogger } from './node_modules/ngx-logger';
 import { Observable } from './node_modules/rxjs';
-import { FormGroup,  FormBuilder,  Validators } from './node_modules/@angular/forms';
+import {
+  FormGroup,
+  FormBuilder,
+  Validators
+} from './node_modules/@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +21,12 @@ export class LoginComponent implements OnInit {
   password: string;
   error: string;
   showSpinner = false;
-  constructor(private router: Router, private logger: NGXLogger, private fb: FormBuilder, private service: LoginService) {
+  constructor(
+    private router: Router,
+    private logger: NGXLogger,
+    private fb: FormBuilder,
+    private service: LoginService
+  ) {
     this.logger.debug('Debug message');
     this.logger.info('Info message');
     this.logger.log('Default log message');
@@ -36,32 +45,27 @@ export class LoginComponent implements OnInit {
 
   login(username, password): Observable<any> {
     this.showSpinner = true;
-   this.service.login(username, password)
-    .subscribe(res => {
+    this.service.login(username, password).subscribe(res => {
       console.log('user Details res', res);
       this.errorParametre = res['res']['err'].error;
-    // this.adminCheck = res['res']['obj'].admin;
-    console.log(this.errorParametre);
-    if (this.errorParametre === 'true') {
+      // this.adminCheck = res['res']['obj'].admin;
+      console.log(this.errorParametre);
+      if (this.errorParametre === 'true') {
         console.log('if');
         this.error = 'Invalid Credentials';
         this.showSpinner = false;
-       // this.router.navigateByUrl('/error');
-    } else {
-      console.log('if not');
-      this.showSpinner = false;
-      this.router.navigateByUrl('/home');
+        // this.router.navigateByUrl('/error');
+      } else {
+        console.log('if not');
+        this.showSpinner = false;
+        this.router.navigateByUrl('/home');
       }
     });
     return this.errorParametre;
   }
   getUserDetails() {
-    this.service.getUserDetails().subscribe(
-      res => {
-        console.log(res, 'res');
-      });
+    this.service.getUserDetails().subscribe(res => {
+      console.log(res, 'res');
+    });
   }
 }
-
-
-

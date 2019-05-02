@@ -12,7 +12,15 @@ export class ApiConfigService {
   rootUrl: string;
 
   constructor(private config: AppConfigService) {
-    const apiConfig: {[key: string]: string | number }  = this.config.getConfig('api');
-    this.rootUrl = apiConfig.protocol + '://' + apiConfig.host + ':' + apiConfig.port + apiConfig.base_url;
+    const apiConfig: { [key: string]: string | number } = this.config.getConfig(
+      'api'
+    );
+    this.rootUrl =
+      apiConfig.protocol +
+      '://' +
+      apiConfig.host +
+      ':' +
+      apiConfig.port +
+      apiConfig.base_url;
   }
 }

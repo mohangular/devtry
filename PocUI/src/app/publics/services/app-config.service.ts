@@ -4,7 +4,6 @@ import { Inject, Injectable } from './node_modules/@angular/core';
   providedIn: 'root'
 })
 export class AppConfigService {
-
   configData: any;
 
   constructor(@Inject('appConfig') private config) {
