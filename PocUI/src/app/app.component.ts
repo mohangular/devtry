@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable } from 'src/app/public/components/register/node_modules/rxjs';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
-import { CardService } from './core/services/card.service';
-import { Card } from './core/models/card.model';
+import { CardService } from './public/services/card.service';
+import { Card } from './public/models/card.model';
 
 @Component({
   selector: 'app-root',

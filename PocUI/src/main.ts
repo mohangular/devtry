@@ -2,8 +2,8 @@ import { enableProdMode, Injector } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 import { AppModule } from './app/app.module';
-import { RemoteLoggingService } from './app/core/services/remote-logging.service';
-import { MaybeLoadLocaleProvidersFromQuerymap } from 'src/app/core/services/language-detection.service';
+import { RemoteLoggingService } from './app/public/services/remote-logging.service';
+import { MaybeLoadLocaleProvidersFromQuerymap } from 'src/app/public/services/language-detection.service';
 
 function loadConfig() {
   const http = new XMLHttpRequest();

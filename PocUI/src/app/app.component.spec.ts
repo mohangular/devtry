@@ -1,9 +1,9 @@
 import { TestBed, async, ComponentFixture } from '@angular/core/testing';
 import { AppModule } from './app.module';
 import { AppComponent } from './app.component';
-import { AppConfigService } from './core/services/app-config.service';
-import { ApiConfigService } from './core/services/api-config.service';
-import { RemoteLoggingService } from './core/services/remote-logging.service';
+import { AppConfigService } from './public/services/app-config.service';
+import { ApiConfigService } from './public/services/api-config.service';
+import { RemoteLoggingService } from './public/services/remote-logging.service';
 import { MockedAppConfigService } from '../../e2e/src/mocks/mocked-app-config.service';
 import { MockedRemoteLoggingService } from '../../e2e/src/mocks/mocked-remote-logging.service';
 

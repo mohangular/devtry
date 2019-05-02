@@ -1,7 +1,7 @@
-import { LoginService } from './core/services/login.service';
-import { GlobalErrorHandlerService } from './core/services/global-error-handler.service';
-import { GlobalErrorComponent } from './core/components/global-error/global-error.component';
-import { RegisterComponent } from './core/components/register/register.component';
+import { LoginService } from './public/services/login.service';
+import { GlobalErrorHandlerService } from './public/services/global-error-handler.service';
+import { GlobalErrorComponent } from './public/components/global-error/global-error.component';
+import { RegisterComponent } from './public/components/register/register.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ErrorHandler } from '@angular/core';
@@ -9,11 +9,11 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { LoginComponent } from './core/components/login/login.component';
-import { SrServicesPopupComponent } from './core/components/sr-services-popup/sr-services-popup.component';
-import { SrSelectedServicesComponent } from './core/components/sr-selected-services/sr-selected-services.component';
-import { SrAvailableServicesComponent } from './core/components/sr-available-services/sr-available-services.component';
-import { SrHomeComponent } from './core/components/sr-home/sr-home.component';
+import { LoginComponent } from './public/components/login/login.component';
+import { SrServicesPopupComponent } from './public/components/sr-services-popup/sr-services-popup.component';
+import { SrSelectedServicesComponent } from './public/components/sr-selected-services/sr-selected-services.component';
+import { SrAvailableServicesComponent } from './public/components/sr-available-services/sr-available-services.component';
+import { SrHomeComponent } from './public/components/sr-home/sr-home.component';
 import { LoggerModule, NgxLoggerLevel } from 'ngx-logger';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -38,8 +38,8 @@ import { MatToolbarModule,
   MatDialogModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
-import { TestcomponentComponent } from './core/components/testcomponent/testcomponent.component';
-import { Comp1TestComponent } from './core/components/comp1-test/comp1-test.component';
+import { TestcomponentComponent } from './public/components/testcomponent/testcomponent.component';
+import { Comp1TestComponent } from './public/components/comp1-test/comp1-test.component';
 
 
 @NgModule({
