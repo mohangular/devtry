@@ -20,3 +20,53 @@
     background-image: url('../assets/icons/icon-72x72.png');
     background-size: cover;
 }
+.page {
+    height: 100%;
+  }
+  
+  
+  mat-sidenav-container, mat-sidenav-content, mat-sidenav {
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  mat-sidenav {
+    width: 250px;
+  }
+  
+  main {
+    padding: 10px;
+  }
+  
+  a {
+    text-decoration: none;
+    color:map-get($cartus-palette, 'cartus_nav_tile');
+  }
+  
+  a:hover, a:active{
+    color: map-get($cartus-palette, 'cartus_light_gray');;
+  }
+  
+  .navigation-items{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  mat-toolbar{
+    border-radius: 3px;
+  }
+  .pos-fixed{
+    position:fixed;
+    z-index:1000;
+    border-radius: 0
+  }
+  main{
+    margin-top:78px;
+  }
+  
+  @media(max-width: 959px){
+    mat-toolbar{
+        border-radius: 0px;
+    }
+  }

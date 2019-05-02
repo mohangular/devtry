@@ -9,7 +9,7 @@ import {map, startWith} from 'rxjs/operators';
 @Component({
   selector: 'app-sr-home',
   templateUrl: './sr-home.component.html',
-  styleUrls: ['./sr-home.component.css']
+  styleUrls: ['./sr-home.component.scss']
 })
 export class SrHomeComponent implements OnInit {
   myControl = new FormControl();

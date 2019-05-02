@@ -5,7 +5,7 @@ import { SrServicesPopupComponent } from './../sr-services-popup/sr-services-pop
 @Component({
   selector: 'app-sr-available-services',
   templateUrl: './sr-available-services.component.html',
-  styleUrls: ['./sr-available-services.component.css']
+  styleUrls: ['./sr-available-services.component.scss']
 })
 export class SrAvailableServicesComponent implements OnInit {
   serviceList: any[];

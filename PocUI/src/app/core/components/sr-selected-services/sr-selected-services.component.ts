@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-sr-selected-services',
   templateUrl: './sr-selected-services.component.html',
-  styleUrls: ['./sr-selected-services.component.css']
+  styleUrls: ['./sr-selected-services.component.scss']
 })
 export class SrSelectedServicesComponent implements OnInit {
   panelOpenState = false;
