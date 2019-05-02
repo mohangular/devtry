@@ -1,0 +1,56 @@
+
+<div class="card">
+  <div class="card-body">
+    <form [formGroup]="registerForm" novalidate>
+      <div class="form-group"> 
+          <label class="col-md-4">User Name </label>
+        <input type="text" class="form-control" formControlName="userName" #userName />
+      </div>
+      <div *ngIf="registerForm.controls['userName'].invalid && (registerForm.controls['userName'].dirty || registerForm.controls['userName'].touched)" class="alert alert-danger">
+        <div *ngIf="registerForm.controls['userName'].errors.required">
+          User Name is required.
+        </div>
+      </div>
+      <div class="form-group"> 
+        <label class="col-md-4">Email Id</label>
+      <input type="email" class="form-control" formControlName="email" #email />
+    </div>
+    <div *ngIf="registerForm.controls['email'].invalid && (registerForm.controls['email'].dirty || registerForm.controls['email'].touched)" class="alert alert-danger">
+      <div *ngIf="registerForm.controls['email'].errors.required">
+        Email Id is required.
+      </div>
+    </div>
+      <div class="form-group">
+        <label class="col-md-4"> Password </label>
+        <input type="password" class="form-control" formControlName="password" #password />
+      </div>
+      <div *ngIf="registerForm.controls['password'].invalid && (registerForm.controls['password'].dirty || registerForm.controls['password'].touched)" class="alert alert-danger">
+        <div *ngIf="registerForm.controls['password'].errors.required">
+          Password is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4">Confirm Password </label>
+        <input type="password" class="form-control" formControlName="confirmPassword" #confirmPassword />
+      </div>
+      <div *ngIf="registerForm.controls['confirmPassword'].invalid && (registerForm.controls['confirmPassword'].dirty || registerForm.controls['confirmPassword'].touched)" class="alert alert-danger">
+        <div *ngIf="registerForm.controls['confirmPassword'].errors.required">
+          Confirm Password is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <button (click)="addPerson(userName.value, email.value, password.value,confirmPassword.value)"
+            [disabled]="registerForm.pristine || registerForm.invalid" 
+            class="btn btn-primary">
+            Register
+         </button>
+    </div>
+    <p>If you are a new user
+    <a routerLink="register"  routerLinkActive="active">
+      Create book
+    </a>
+  </p>
+    </form>
+  </div>
+</div>
+

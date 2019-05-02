@@ -1,0 +1,22 @@
+@import '../sass/cartus-palette.scss';
+
+.container {
+    padding: 15px;
+}
+
+.title-img {
+    width: 300px;
+}
+
+.card {
+    width: 100%;
+}
+
+.mat-card {
+    background-color: map-get($cartus-palette, 'cartus_light_blue');
+}
+
+.card-header-image {
+    background-image: url('../assets/icons/icon-72x72.png');
+    background-size: cover;
+}

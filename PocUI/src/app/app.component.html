@@ -1,0 +1,26 @@
+<!--div class="container">
+    <div style="text-align:center">
+      <h1 i18n="@@homeTitle">Welcome To New {{ title }}!</h1>
+      <img class="title-img" alt="Angular Logo" [src]="imgSrc" />
+    </div>
+    <h2 i18n="@@homeDescription">Here are some links to help you start:</h2>
+    <div id="cards" fxLayout.lt-md="column" fxLayout.gt-sm="row" fxLayoutAlign="space-evenly center" fxLayoutGap="15px">
+      <div *ngFor="let card of cards$ | async" class="card">
+        <mat-card>
+          <mat-card-header>
+            <div mat-card-avatar [ngClass]="card.iconClass"></div>
+            <mat-card-title i18n="{{ card.i18nTitle }}">{{ card.title }}</mat-card-title>
+            <mat-card-subtitle i18n="{{ card.i18nSubtitle }}">{{ card.subtitle }}</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <h3><a target="_blank" rel="noopener" [href]="card.linkUrl">{{ card.linkLabel }}</a></h3>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  <router-outlet></router-outlet>
+</div>-->
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

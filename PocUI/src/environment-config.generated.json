@@ -1,0 +1,12 @@
+{
+  "environment": "developer",
+  "api": {
+    "host": "localhost",
+    "port": "4000",
+    "protocol": "http",
+    "base_url": "/api/"
+  },
+  "google_analytics": {
+    "key": "UA-119441655-1"
+  }
+}
