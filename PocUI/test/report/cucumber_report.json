@@ -1,0 +1,202 @@
+[
+  {
+    "description": "  In order to do rate card value calculation\n  As a developer\n  I want to get collective information about quantity and card code",
+    "keyword": "Feature",
+    "name": "Simple Relo",
+    "line": 6,
+    "id": "simple-relo",
+    "tags": [],
+    "uri": "test\\features\\simple_relo.feature",
+    "elements": [
+      {
+        "id": "simple-relo;one-rate-card-value",
+        "keyword": "Scenario",
+        "line": 11,
+        "name": "One Rate Card value",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 12,
+            "name": "a card code set to 1",
+            "match": {
+              "location": "Relo\\Code\\devtry\\PocUI\\node_modules\\cucumber\\lib\\support_code_library_builder\\build_helpers.js:173"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 13,
+            "name": "I get the quantity as 1",
+            "match": {
+              "location": "Relo\\Code\\devtry\\PocUI\\node_modules\\cucumber\\lib\\support_code_library_builder\\build_helpers.js:173"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 14,
+            "name": "the rate value should be 100",
+            "match": {
+              "location": "Relo\\Code\\devtry\\PocUI\\node_modules\\cucumber\\lib\\support_code_library_builder\\build_helpers.js:173"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "simple-relo;more-than-one-rate-card-value",
+        "keyword": "Scenario",
+        "line": 22,
+        "name": "More than one Rate Card Value",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 17,
+            "name": "a card code set to 3",
+            "match": {
+              "location": "Relo\\Code\\devtry\\PocUI\\node_modules\\cucumber\\lib\\support_code_library_builder\\build_helpers.js:173"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 18,
+            "name": "I get the quantity as 2",
+            "match": {
+              "location": "Relo\\Code\\devtry\\PocUI\\node_modules\\cucumber\\lib\\support_code_library_builder\\build_helpers.js:173"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 19,
+            "name": "the rate value should be 200",
+            "match": {
+              "location": "Relo\\Code\\devtry\\PocUI\\node_modules\\cucumber\\lib\\support_code_library_builder\\build_helpers.js:173"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 1000000,
+              "error_message": "AssertionError\n    + expected - actual\n\n    -300\n    +200\n\n    at SimpleReloRate.<anonymous> (D:\\Project\\Simple Relo\\Code\\devtry\\PocUI\\test\\features\\step_definitions\\steps.js:13:24)"
+            }
+          }
+        ]
+      },
+      {
+        "id": "simple-relo;more-than-one-rate-card-value",
+        "keyword": "Scenario",
+        "line": 23,
+        "name": "More than one Rate Card Value",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 17,
+            "name": "a card code set to 1",
+            "match": {
+              "location": "Relo\\Code\\devtry\\PocUI\\node_modules\\cucumber\\lib\\support_code_library_builder\\build_helpers.js:173"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 18,
+            "name": "I get the quantity as 1",
+            "match": {
+              "location": "Relo\\Code\\devtry\\PocUI\\node_modules\\cucumber\\lib\\support_code_library_builder\\build_helpers.js:173"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 19,
+            "name": "the rate value should be 100",
+            "match": {
+              "location": "Relo\\Code\\devtry\\PocUI\\node_modules\\cucumber\\lib\\support_code_library_builder\\build_helpers.js:173"
+            },
+            "result": {
+              "status": "passed"
+            }
+          }
+        ]
+      },
+      {
+        "id": "simple-relo;more-than-one-rate-card-value",
+        "keyword": "Scenario",
+        "line": 24,
+        "name": "More than one Rate Card Value",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 17,
+            "name": "a card code set to 2",
+            "match": {
+              "location": "Relo\\Code\\devtry\\PocUI\\node_modules\\cucumber\\lib\\support_code_library_builder\\build_helpers.js:173"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 18,
+            "name": "I get the quantity as 3",
+            "match": {
+              "location": "Relo\\Code\\devtry\\PocUI\\node_modules\\cucumber\\lib\\support_code_library_builder\\build_helpers.js:173"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 19,
+            "name": "the rate value should be 600",
+            "match": {
+              "location": "Relo\\Code\\devtry\\PocUI\\node_modules\\cucumber\\lib\\support_code_library_builder\\build_helpers.js:173"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
