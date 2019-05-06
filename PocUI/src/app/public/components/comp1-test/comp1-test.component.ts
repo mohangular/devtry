@@ -9,4 +9,6 @@ export class Comp1TestComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
+
+  test() {}
 }
