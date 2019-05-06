@@ -5,6 +5,7 @@
         <label>User Name </label>
         <input type="text" class="form-control" formControlName="userName" #userName />
       </div>
+      
       <div
         *ngIf="registerForm.controls['userName'].invalid && (registerForm.controls['userName'].dirty || registerForm.controls['userName'].touched)"
         class="alert alert-danger col-md-4">
